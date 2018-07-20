@@ -1,0 +1,13 @@
+{
+    "name": "archee-nic/ketkz-api",
+    "description": "http://ketkz.com API",
+    "authors": [
+        {
+            "name": "Arthur Kasimov",
+            "email": "kasimovarthur@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0"
+    }
+}
