@@ -51,7 +51,8 @@ class KetkzApi
      */
     private function _makeHash(string $data)
     {
-        return strlen($data).md5($this->uid);
+        $hash_str = strlen($data).md5($this->uid);
+        return $hash = hash("sha256", $hash_str);
     }
 
     /**
