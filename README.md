@@ -28,7 +28,7 @@ $api = new KetkzApi($transport, 'uid', 'secret');
 
 // Готовим данные
 $requestOrder          = new RequestSendOrder();
-$requestOrder->phone   = '+7 777 777 77 77';
+$requestOrder->phone   = '79017777777';
 $requestOrder->country = 'kz';
 $requestOrder->offer   = 'brutalin - 2';
 $requestOrder->secret  = '1';
