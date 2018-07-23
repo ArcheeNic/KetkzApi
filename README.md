@@ -17,6 +17,53 @@
 ## <a name="start"></a> Start/Начало
 
 1. Создаем транспорт реализующий TransportInterface
+
+```php
+// Пример транспорта:
+// ----------------------------
+
+class MyTransport implements \KetkzApi\TransportInterface
+{
+
+    private $curl;
+
+    /**
+     * MyTransport constructor.
+     *
+     * @throws ErrorException
+     */
+    public function __construct()
+    {
+        $this->curl = new \Curl\Curl();
+    }
+
+    /**
+     * @param string $url
+     * @param null   $postData
+     * @param array  $options
+     *
+     * @return string
+     * @throws ErrorException
+     */
+    public function send($url, $postData = null, $options = [])
+    {
+        $this->curl->post($url,$postData);
+        return $this->curl->response;
+    }
+
+    public function getHttpCode()
+    {
+        return $this->curl->httpStatusCode;
+    }
+
+    public function getDebugInfo()
+    {
+        return ['info'=>$this->curl->getInfo()];
+    }
+
+}
+```
+
 2. Вызываем в нужном нам месте
 
 Пример:
