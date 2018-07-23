@@ -19,7 +19,7 @@
 1. Создаем транспорт реализующий TransportInterface
 
 ```php
-// Пример транспорта:
+// Пример транспорта c использованием Curl\Curl:
 // ----------------------------
 
 class MyTransport implements \KetkzApi\TransportInterface
