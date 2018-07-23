@@ -1,13 +1,13 @@
-<?php
+<?php namespace KetkzApi\Builders;
+
+use KetkzApi\ExceptionKetz;
+
 /**
- * Created by PhpStorm.
- * User: kasim
- * Date: 20.07.2018
- * Time: 16:29
+ * Ответ с ошибкой от GetOrders
+ * Class ResponseGetOrdersFail
+ *
+ * @package KetkzApi\Builders
  */
-
-namespace KetkzApi\Builders;
-
 class ResponseGetOrdersFail extends BuilderAbstract
 {
     public $success;

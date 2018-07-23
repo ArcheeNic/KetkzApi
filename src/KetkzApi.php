@@ -75,7 +75,7 @@ class KetkzApi
      * @param RequestSendOrder $order
      *
      * @return integer
-     * @throws Builders\ExceptionKetz
+     * @throws ExceptionKetz
      */
     public function sendOrder(RequestSendOrder $order): ResponseSendOrder
     {
@@ -91,7 +91,7 @@ class KetkzApi
      * @param integer[] $orders
      *
      * @return ResponseSendOrder[]|ResponseGetOrdersFail
-     * @throws Builders\ExceptionKetz
+     * @throws ExceptionKetz
      */
     public function getOrders(array $orders = [])
     {

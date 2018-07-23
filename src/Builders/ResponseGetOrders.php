@@ -1,14 +1,11 @@
-<?php
+<?php namespace KetkzApi\Builders;
+
 /**
- * Created by PhpStorm.
- * User: kasim
- * Date: 20.07.2018
- * Time: 16:40
+ * Успешный ответ от GetOrders
+ * Class ResponseGetOrders
+ *
+ * @package KetkzApi\Builders
  */
-
-namespace KetkzApi\Builders;
-
-
 class ResponseGetOrders extends BuilderAbstract
 {
     public $id; // ketkz id

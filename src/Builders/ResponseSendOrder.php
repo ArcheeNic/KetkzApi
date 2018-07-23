@@ -1,13 +1,13 @@
-<?php
+<?php namespace KetkzApi\Builders;
+
+use KetkzApi\ExceptionKetz;
+
 /**
- * Created by PhpStorm.
- * User: kasim
- * Date: 20.07.2018
- * Time: 16:29
+ * Ответ от SendOrder
+ * Class ResponseSendOrder
+ *
+ * @package KetkzApi\Builders
  */
-
-namespace KetkzApi\Builders;
-
 class ResponseSendOrder extends BuilderAbstract
 {
     public $success;

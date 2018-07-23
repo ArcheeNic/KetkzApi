@@ -1,6 +1,13 @@
 <?php namespace KetkzApi\Builders;
 
+use KetkzApi\ExceptionKetz;
 
+/**
+ * Данные для отправки в SendOrder
+ * Class RequestSendOrder
+ *
+ * @package KetkzApi\Builders
+ */
 class RequestSendOrder extends BuilderAbstract
 {
     public $phone;          // номер телефона заказчика товара (* Обязательное поле)

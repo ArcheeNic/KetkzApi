@@ -1,14 +1,12 @@
-<?php
+<?php namespace KetkzApi\Builders;
+
+use KetkzApi\ExceptionKetz;
+
 /**
- * Created by PhpStorm.
- * User: kasim
- * Date: 23.07.2018
- * Time: 11:29
+ * Interface BuilderInterface
+ *
+ * @package KetkzApi\Builders
  */
-
-namespace KetkzApi\Builders;
-
-
 interface BuilderInterface
 {
     /**

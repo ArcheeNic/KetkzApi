@@ -1,14 +1,10 @@
-<?php
+<?php namespace KetkzApi\Builders;
+
 /**
- * Created by PhpStorm.
- * User: kasim
- * Date: 23.07.2018
- * Time: 14:24
+ * Class BuilderAbstract
+ *
+ * @package KetkzApi\Builders
  */
-
-namespace KetkzApi\Builders;
-
-
 abstract class BuilderAbstract implements BuilderInterface
 {
     /**

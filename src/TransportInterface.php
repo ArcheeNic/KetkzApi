@@ -1,6 +1,11 @@
 <?php namespace KetkzApi;
 
-
+/**
+ * Любой способ работы обмена данными должен реализовывать этот интерфейс.
+ * Interface TransportInterface
+ *
+ * @package KetkzApi
+ */
 interface TransportInterface
 {
     /**
