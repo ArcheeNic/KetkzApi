@@ -82,7 +82,7 @@ class KetkzApi
         $order->validate();
         $data   = json_encode((array)$order);
         $url    = $this->_makeUrl('send_order.php', $this->_makeHash($data));
-        $result = $this->transport->send($url, ['data' => $order]);
+        $result = $this->transport->send($url, ['data' => $data]);
         $result = json_decode($result, true);
         return new ResponseSendOrder($result['result']);
     }
@@ -95,7 +95,12 @@ class KetkzApi
      */
     public function getOrders(array $orders = [])
     {
-        $result = $this->transport->send($this->url.'get_orders.php', $orders);
+        $orders = array_map(function ($order) {
+            return ['id' => $order];
+        }, $orders);
+        $data   = json_encode((array)$orders);
+        $url    = $this->_makeUrl('get_orders.php', $this->_makeHash($data));
+        $result = $this->transport->send($url, ['data' => $data]);
         $result = json_decode($result, true);
         if (isset($result['result'])) {
             return new ResponseGetOrdersFail($result['result']);
