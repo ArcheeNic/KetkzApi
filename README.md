@@ -19,10 +19,13 @@ $api = new KetkzApi($transport, 'uid', 'secret');
 
 ### sendOrder - Отправка заказа
 **Передается:** `объект RequestSendOrder`
+
 **В ответ возвращается:** `объект ResponseSendOrder`
 
-#### Пример отправки данных:
 ```php
+// Пример отправки данных:
+// ----------------------------
+
 // Готовим данные
 $requestOrder          = new RequestSendOrder();
 $requestOrder->phone   = '+7 777 777 77 77';
@@ -41,8 +44,10 @@ $data = $api->sendOrder($requestOrder);
 
 **В ответ возвращается:** `объект ResponseGetOrdersFail` - если ошибка или `массив из ResponseSendOrder` - если успешно
 
-#### Пример отправки данных:
 ```php
+// Пример отправки данных:
+// ----------------------------
+
 // готовим id заказов
 $ids=[1,2];
 
