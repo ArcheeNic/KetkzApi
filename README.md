@@ -1,21 +1,20 @@
 # KETKZ API wrapper
 
-1. [Install/Установка](head1)
-2. [Start/Начало]()
-3. [Methods/Методы]()
-    1. [sendOrder - Отправка заказа]()
-    2. [getOrders - Получение статусов и данных по заказу]()
-4. [Значения полей]()
-    1. [Тип доставки]()
-    2. [Статусы доставки (переменная send_status)]()
-    3. [Статусы посылки (переменная status_kz)]()
-    4. [Статусы подтверждения (переменная status)]()
+1. [Install/Установка](#install)
+2. [Start/Начало](#start)
+3. [Methods/Методы](#methods)
+    1. [sendOrder - Отправка заказа](#sendOrder)
+    2. [getOrders - Получение статусов и данных по заказу](#getOrders)
+4. [Значения полей](#fields)
+    1. [Тип доставки](#deliveries)
+    2. [Статусы доставки (переменная send_status)](#send_status)
+    3. [Статусы посылки (переменная status_kz)](#status_kz)
+    4. [Статусы подтверждения (переменная status)](#status)
 
-
-## <a name="head1">Install/Установка</a>
+## <a name="install"></a> Install/Установка
 `composer require archee-nic/ketkz-api`
 
-## Start/Начало
+## <a name="start"></a> Start/Начало
 
 1. Создаем транспорт реализующий TransportInterface
 2. Вызываем в нужном нам месте
@@ -27,9 +26,9 @@ use KetkzApi;
 $api = new KetkzApi($transport, 'uid', 'secret');
 ```
 
-## Methods/Методы
+## <a name="methods"></a> Methods/Методы
 
-### sendOrder - Отправка заказа
+### <a name="sendOrder"></a> sendOrder - Отправка заказа
 **Передается:** `объект RequestSendOrder`
 
 **В ответ возвращается:** `объект ResponseSendOrder`
@@ -49,7 +48,7 @@ $requestOrder->secret  = '1';
 $data = $api->sendOrder($requestOrder);
 ```
 
-### getOrders - Получение статусов и данных по заказу
+### <a name="getOrders"></a> getOrders - Получение статусов и данных по заказу
 **Передается массив:** `массив integer` c  id заказов
 
 > id заказа = id заказа в нашей системе который получен при отправке заказа в систему Ketkz
@@ -67,8 +66,8 @@ $ids=[1,2];
 $data = $api->getOrders($ids);
 ```
 
-## Значения полей
-### Тип доставки
+## <a name="fields"></a> Значения полей
+### <a name="deliveries"></a> Тип доставки
 ```
 ------ Казахстан
 1    =>'AKSAI',
@@ -183,7 +182,7 @@ $data = $api->getOrders($ids);
 153 => 'Исилькуль'
 ```
 
-### Статусы доставки (переменная send_status)
+### <a name="send_status"></a> Статусы доставки (переменная send_status)
 ```
 "0" "Отправлен"
 "4" "Отказ"
@@ -192,7 +191,7 @@ $data = $api->getOrders($ids);
 "7" "Отклонено"
 ```
 
-### Статусы посылки (переменная status_kz)
+### <a name="status_kz"></a> Статусы посылки (переменная status_kz)
 ```
 "0" "Обработка"
 "1" "Отложенная доставка"
@@ -220,7 +219,7 @@ $data = $api->getOrders($ids);
 ```
 
 ### Статусы подтверждения (переменная status)
-
+```
 "0" "новая"
 "1" "Подтвержден"
 "2" "Отменён"
@@ -232,3 +231,4 @@ $data = $api->getOrders($ids);
 "8" "Заказано у конкурентов"
 "10" "недозвон_ночь"
 "11" "Предварительно подтвержден"
+```
