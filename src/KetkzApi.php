@@ -66,9 +66,9 @@ class KetkzApi
     private function _makeUrl(string $address, string $hash)
     {
         return $this->url.$address.'?'.http_build_query([
-                'hash'   => $hash,
-                'uid'    => $this->uid,
-                'secret' => $this->secret
+                'uid'  => $this->uid,
+                's'    => $this->secret,
+                'hash' => $hash,
             ]);
     }
 
