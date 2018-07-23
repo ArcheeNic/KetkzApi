@@ -18,11 +18,10 @@ $api = new KetkzApi($transport, 'uid', 'secret');
 ## Methods/Методы
 
 ### sendOrder - Отправка заказа
-Передается объект RequestSendOrder
+**Передается:** `объект RequestSendOrder`
+**В ответ возвращается:** `объект ResponseSendOrder`
 
-В ответ возвращается ResponseSendOrder
-
-Пример отправки данных:
+#### Пример отправки данных:
 ```php
 // Готовим данные
 $requestOrder          = new RequestSendOrder();
@@ -36,12 +35,13 @@ $data = $api->sendOrder($requestOrder);
 ```
 
 ### getOrders - Получение статусов и данных по заказу
-Передается массив с id заказов
+**Передается массив:** `массив integer` c  id заказов
 
 > id заказа = id заказа в нашей системе который получен при отправке заказа в систему Ketkz
 
-В ответ возвращается: ResponseGetOrdersFail - если ошибка и массив из ResponseSendOrder - если успешно
+**В ответ возвращается:** `объект ResponseGetOrdersFail` - если ошибка или `массив из ResponseSendOrder` - если успешно
 
+#### Пример отправки данных:
 ```php
 // готовим id заказов
 $ids=[1,2];
