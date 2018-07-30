@@ -114,7 +114,10 @@ $data = $api->getOrders($ids);
 ```
 
 ## <a name="fields"></a> Значения полей
+Все значения статусов представлены в [KetkzApi\Enums](./src/Enums)
+
 ### <a name="deliveries"></a> Тип доставки
+Также представлен в Enum классе [KetkzApi\Enums\KzDeliveryEnum](./src/Enums/KzDeliveryEnum.php)
 ```
 ------ Казахстан
 1    =>'AKSAI',
@@ -230,6 +233,7 @@ $data = $api->getOrders($ids);
 ```
 
 ### <a name="send_status"></a> Статусы доставки (переменная send_status)
+Также представлен в Enum классе [KetkzApi\Enums\SendStatusEnum](./src/Enums/SendStatusEnum.php)
 ```
 "0" "Отправлен"
 "4" "Отказ"
@@ -239,6 +243,7 @@ $data = $api->getOrders($ids);
 ```
 
 ### <a name="status_kz"></a> Статусы посылки (переменная status_kz)
+Также представлен в Enum классе [KetkzApi\Enums\StatusKzEnum](./src/Enums/StatusKzEnum.php)
 ```
 "0" "Обработка"
 "1" "Отложенная доставка"
@@ -266,6 +271,7 @@ $data = $api->getOrders($ids);
 ```
 
 ### <a name="status"></a> Статусы подтверждения (переменная status)
+Также представлен в Enum классе [KetkzApi\Enums\StatusEnum](./src/Enums/StatusEnum.php)
 ```
 "0" "новая"
 "1" "Подтвержден"
