@@ -39,7 +39,7 @@ class RequestSendOrder extends BuilderAbstract
         if (!$this->secret) {
             throw new ExceptionKetz(__CLASS__.' required field "secret" is empty');
         }
-        if (!$this->secret) {
+        if (!$this->offer) {
             throw new ExceptionKetz(__CLASS__.' required field "offer" is empty');
         }
     }
