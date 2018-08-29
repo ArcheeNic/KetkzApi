@@ -80,6 +80,7 @@ class KetkzApi
      */
     public function sendOrder(RequestSendOrder $order): ResponseSendOrder
     {
+        if(!$order->secret) $order->secret = $this->secret;
         $order->validate();
         $data   = json_encode((array)$order);
         $url    = $this->_makeUrl('send_order.php', $this->_makeHash($data));
