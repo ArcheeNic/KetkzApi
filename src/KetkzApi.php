@@ -73,6 +73,32 @@ class KetkzApi
     }
 
     /**
+     * @param string $uri
+     * @param string $response
+     *
+     * @return array
+     * @throws ExceptionKetz
+     */
+    private function _send(string $url, array $request): array
+    {
+        $response = $this->transport->send($url, $request);
+        $resultDecoded = json_decode($response, true);
+        if ($resultDecoded === null) {
+            $request = json_encode($request);
+            $message = <<<EOT
+Неожиданный ответ от КЕТ.
+-------------------------
+URI: $url
+Запрос: $request
+Ответ: $response
+EOT;
+
+            throw new ExceptionKetz($message);
+        }
+        return $resultDecoded;
+    }
+
+    /**
      * @param RequestSendOrder $order
      *
      * @return integer
@@ -84,9 +110,10 @@ class KetkzApi
         $order->validate();
         $data   = json_encode((array)$order);
         $url    = $this->_makeUrl('send_order.php', $this->_makeHash($data));
-        $result = $this->transport->send($url, ['data' => $data]);
-        $result = json_decode($result, true);
-        return new ResponseSendOrder($result['result']);
+
+        $response  = $this->_send($url, ['data' => $data]);
+
+        return new ResponseSendOrder($response['result']);
     }
 
     /**
@@ -102,14 +129,16 @@ class KetkzApi
         }, $orders);
         $data   = json_encode((array)$orders);
         $url    = $this->_makeUrl('get_orders.php', $this->_makeHash($data));
-        $result = $this->transport->send($url, ['data' => $data]);
-        $result = json_decode($result, true);
-        if (isset($result['result'])) {
-            return new ResponseGetOrdersFail($result['result']);
+
+        $response  = $this->_send($url, ['data' => $data]);
+
+        if (isset($response['result'])) {
+            return new ResponseGetOrdersFail($response['result']);
         }
-        $result = array_map(function ($item) {
+
+        $response = array_map(function ($item) {
             return new ResponseGetOrders($item);
-        }, $result);
-        return $result;
+        }, $response);
+        return $response;
     }
 }

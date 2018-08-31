@@ -3,6 +3,7 @@
 
 use KetkzApi\Builders\RequestSendOrder;
 use KetkzApi\Builders\ResponseGetOrdersFail;
+use KetkzApi\ExceptionKetz;
 use KetkzApi\KetkzApi;
 use KetkzApi\TransportInterface;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -61,5 +62,15 @@ class GetOrdersTest extends TestCase
         $data = $this->api->getOrders([1]);
 
         $this->assertTrue($data instanceof ResponseGetOrdersFail);
+    }
+
+    /**
+     * @throws \KetkzApi\ExceptionKetz
+     */
+    public function testParseResponseError(){
+        $this->expectException(ExceptionKetz::class);
+        $this->transport->method('send')->willReturn('{"result');
+
+        $this->api->getOrders([1]);
     }
 }
