@@ -10,10 +10,10 @@ class SendStatusEnum extends Enum
     const DISAPPROVED = 7; // "Отклонено"
 
     static $statusNames = [
-        self::SENT        => 'Отправлен',
-        self::FAILURE     => 'Отказ',
-        self::PAID        => 'Оплачен',
-        self::TO_SEND     => 'На отправку',
-        self::DISAPPROVED => 'Отклонено',
+        'Отправлен'   => self::SENT,
+        'Отказ'       => self::FAILURE,
+        'Оплачен'     => self::PAID,
+        'На отправку' => self::TO_SEND,
+        'Отклонено'   => self::DISAPPROVED,
     ];
 }

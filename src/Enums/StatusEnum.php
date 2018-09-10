@@ -16,16 +16,16 @@ class StatusEnum extends Enum
     const PRE_CONFIRMED             = "11"; //  "Предварительно подтвержден"
 
     static $statusNames = [
-        self::NEW                       => 'новая',
-        self::CONFIRMED                 => 'Подтвержден',
-        self::CANCELED                  => 'Отменён',
-        self::CALL_BACK                 => 'Перезвонить',
-        self::NEDOCHVON                 => 'Недозвон',
-        self::MARRIAGE                  => 'Брак',
-        self::ALREADY_RECEIVED_AN_ORDER => 'Уже получил заказ',
-        self::BLACK_LIST                => 'Черный список',
-        self::ORDERED_FROM_COMPETITORS  => 'Заказано у конкурентов',
-        self::CALL_FAIL_OVERNIGHT       => 'недозвон_ночь',
-        self::PRE_CONFIRMED             => 'Предварительно подтвержден',
+        'новая'                      => self::NEW,
+        'Подтвержден'                => self::CONFIRMED,
+        'Отменён'                    => self::CANCELED,
+        'Перезвонить'                => self::CALL_BACK,
+        'Недозвон'                   => self::NEDOCHVON,
+        'Брак'                       => self::MARRIAGE,
+        'Уже получил заказ'          => self::ALREADY_RECEIVED_AN_ORDER,
+        'Черный список'              => self::BLACK_LIST,
+        'Заказано у конкурентов'     => self::ORDERED_FROM_COMPETITORS,
+        'недозвон_ночь'              => self::CALL_FAIL_OVERNIGHT,
+        'Предварительно подтвержден' => self::PRE_CONFIRMED,
     ];
 }
