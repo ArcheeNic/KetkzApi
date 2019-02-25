@@ -1,6 +1,5 @@
 <?php namespace KetkzApi\Enums;
 
-
 class StatusKzEnum extends Enum
 {
     const TREATMENT            = 0; //   "Обработка"
@@ -26,6 +25,7 @@ class StatusKzEnum extends Enum
     const TO_CONTROL           = 22; //  "На контроль"
     const EXTRA_PACKAGED       = 23; //  "Упакован добавочный"
     const PARTIAL_RETURN       = 24; //  "Частичный возврат"
+    const NO_PRODUCTS_FRESH    = 25; //  "Нет товара свежий"
 
 
     static $statusNames
@@ -52,9 +52,7 @@ class StatusKzEnum extends Enum
             'Возврат денег'                => self::REFUND,
             'На контроль'                  => self::TO_CONTROL,
             'Упакован добавочный'          => self::EXTRA_PACKAGED,
-            'Частичный возврат'            => self::PARTIAL_RETURN
+            'Частичный возврат'            => self::PARTIAL_RETURN,
+            'Нет товара свежий'            => self::NO_PRODUCTS_FRESH,
         ];
-
 }
-
-
